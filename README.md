@@ -56,6 +56,4 @@ With *Data Structures & Algorithms* we can work on any amount of data with memor
 
 ## **How an Algorithm works :**
 
-+-------+ 
-| Input |   ----> 
-+-------+
+**|** **Input** **|**    :arrow_right: 
