@@ -1,1 +1,1 @@
-## **Searching Algorithm**
+## **Searching Algorithm**  :mag:
