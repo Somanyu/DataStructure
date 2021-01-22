@@ -1,4 +1,5 @@
-<h1 align="center"><strong>Data Structures & Algorithms</strong></h1>    :octocat:
+
+:octocat: <h1 align="center"><strong>Data Structures & Algorithms</strong></h1>    
 
 <p align='center'>
 <img src='https://img.shields.io/github/languages/count/Somanyu/DataStructure'>
