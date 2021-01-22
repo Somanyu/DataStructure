@@ -47,11 +47,15 @@ With *Data Structures & Algorithms* we can work on any amount of data with memor
 <br>
 
 ## **Basic Operations (or) Algorithms performed on Data Structure:**
-### **1. Insertion:** adds a new data item in the data structure
-### **2. Deletion:** deletes a existing data item in the data structure
-### **3. Traversal:** access each data item exactly once so that it can be processed
-### **4. Searching:** find out the location of the data item if it exits in data structure
-### **5. Sorting:** arranging the data items in some order
+**1. Insertion:** adds a new data item in the data structure
+
+**2. Deletion:** deletes a existing data item in the data structure
+
+**3. Traversal:** access each data item exactly once so that it can be processed
+
+**4. Searching:** find out the location of the data item if it exits in data structure
+
+**5. Sorting:** arranging the data items in some order
 
 <br>
 
