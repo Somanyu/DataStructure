@@ -22,4 +22,3 @@ function linear_search (array, value_to_search)
     end for
 end function
 ```
-
