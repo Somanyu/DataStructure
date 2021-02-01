@@ -9,7 +9,7 @@ The *Searching* *Algorithm* is an algorithm which searches for an element in an 
 
 
 ## **Linear Search:** 
-*Linear Search* is an algorithm which sequentially checks each element in an array untill a match is found or the whole array has been searched.
+*Linear Search* is an algorithm which sequentially checks each element in an array untill a match is found or the whole array has been searched. It is mostly used to search unordered or unsorted list.
 
 ## **Algorithm for Linear Search**
 ```
