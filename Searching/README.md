@@ -13,4 +13,15 @@ The *Searching* *Algorithm* is an algorithm which searches for an element in an 
 ## **Linear Search:** 
 *Linear Search* is an algorithm which sequentially checks each element in an array untill a match is found or the whole array has been searched.
 
+## **Algorithm for Linear Search**
+```
+function linear_search (array, value_to_search)
+    for each item in the array
+        if item == value_to_search
+            return items's location
+        end if
+    return -1
+    end for
+end function
+```
 
