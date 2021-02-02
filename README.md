@@ -10,7 +10,7 @@
 
 <img src='https://img.shields.io/github/issues/Somanyu/DataStructure'>
 
-<img src='https://img.shields.io/github/followers/Somanyu?style=social'>
+<img src='https://img.shields.io/twitter/follow/vadaa_pav?style=social'>
 </p>
 
 <br>
