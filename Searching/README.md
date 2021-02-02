@@ -45,3 +45,5 @@ function binary_search(array, left_index, right_index, value_to_search)
 1. If element is present at the middle index of the array, it will return the middle index
 2. If element is smaller than number present at the middle index, it will be present in the left side of the middle element
 3. If element is larger than number present at the middle index, it will be present in the right side of the middle element
+
+![alt text](https://cdn.emre.me/2019-08-08-binary-search.png "Binary Search")
