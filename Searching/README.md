@@ -22,3 +22,4 @@ function linear_search (array, value_to_search)
     end for
 end function
 ```
+![alt text](https://2.bp.blogspot.com/-HbIqsxVbYzg/WelyE3i34zI/AAAAAAAAJbo/SM7c1bcVDXwmcMjRWIsXmh4OVca6GOEmQCLcBGAs/w1200-h630-p-k-no-nu/Linear-Search.png "Linear Search")
