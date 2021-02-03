@@ -4,11 +4,11 @@
 ## Real life examples of Stack Data Structure:
 A good real life example of Stack is books :books: piled up on each other. The bottom most book is alwasy kept first in order while the top most book is kept last in order. So if you want the bottom most book(First In) which was kept first in the box then you have to take all the books one by one untill you reach the bottom. By doing this you can remove the book(Last Out) which was kept first. Same with the book present at the top of the pile. It was the last book kept in(Last In) the pile but it will be the first to be taken out(First Out) of the pile.
 
-# Stack Terms:
-**Overflow:** when we try to add or push a element to array which is full then this condition is known as overflow condition
+## Stack Terms:
+**Overflow:** when we try to add or push a element to array which is full then this condition is known as overflow condition<br>
 **Underflow:** when we try to remove or pop a element from a empty array then this condition is known as underflow condition
 
-# Algorithm for Stack Data Structure:
+## Algorithm for Stack Data Structure:
 
 1. Initialize a one dimensional array 
 ```
