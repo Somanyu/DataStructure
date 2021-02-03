@@ -2,4 +2,4 @@
 *Stack* is an abstract data type(ADT) which performs operations like push, pop and display in a particular order *i.e* LIFO - Last In First Out or FILO - First In Last Out.
 
 ## Real life examples of Stack Data Structure:
-1. A good real life example of Stack is books :books: piled up on each other.
+A good real life example of Stack is books :books: piled up on each other. The bottom most book is alwasy kept first in order while the top most book is kept last in order. So if you want the bottom most book(First In) which was kept first in the box then you have to take all the books one by one untill you reach the bottom. By doing this you can remove the book(Last Out) which was kept first. Same with the book present at the top of the pile. It was the last book kept in(Last In) the pile but it will be the first to be taken out(First Out) of the pile.
