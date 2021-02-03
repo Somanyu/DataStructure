@@ -1,1 +1,2 @@
-# **Stack Data Structure**
+# **Stack Data Structure**  :cd:
+*Stack* is an abstract data type(ADT) which performs operations like push, pop and display in a particular order *i.e* LIFO - Last In First Out or FILO - First In Last Out.
