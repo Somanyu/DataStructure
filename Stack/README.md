@@ -19,7 +19,7 @@ This represents the top of the Stack Data Structure
 ```
 int top = -1
 ```
-3. Declare PUSH, POP, DISPLAY functions
+3. Declare PUSH, POP, PEEK functions
 
     * PUSH() function:
     ``` 
@@ -39,3 +39,11 @@ int top = -1
         delete stack[top] AND top--
     else end
     ```
+    * PEEK() function:
+    ```
+    if stack is full
+        return stack[top]
+    ```
+![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lifo_stack.png/350px-Lifo_stack.png "Stack Data Structure")
+
+## Application of Stack Data Structure:
