@@ -47,3 +47,6 @@ int top = -1
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lifo_stack.png/350px-Lifo_stack.png "Stack Data Structure")
 
 ## Application of Stack Data Structure:
+1. Expression Evaluation
+2. Parenthesis matching in an expression
+3. Conversion of one form of expression to another form(infix, postfix, prefix)
