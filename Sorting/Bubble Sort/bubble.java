@@ -4,8 +4,15 @@ public class bubble {
     // function for bubble sort
     void bubblesort(int arr[]) {
         
+        // outer loop for passes
         for (int i = 0; i < arr.length-1; i++)
+
+            // inner loop for swapping elements
+            // inside the array 
             for (int j = 0; j < arr.length-1-i; j++)
+
+                // swapping is performed if 
+                // an element is greater than next element
                 if (arr[j] > arr[j+1]) {
                     
                     int temp = arr[j];
