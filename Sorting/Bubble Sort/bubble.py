@@ -2,10 +2,11 @@
 
 def bubblesort(arr):
 
-    # outer loop 
+    # outer loop for passes 
     for i in range(len(arr)):
 
-        # inner loop for swapping elements 
+        # inner loop for swapping elements
+        # inside the array 
         for j in range(0, len(arr)-1-i):
 
             # swapping is performed if
