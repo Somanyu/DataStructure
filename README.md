@@ -62,3 +62,17 @@ With *Data Structures & Algorithms* we can work on any amount of data with memor
 ## **How an Algorithm works :**
 
 **INPUT**   :arrow_right: **set of rules to obtain the expected output from the given input** :arrow_right: **OUTPUT** 
+
+## **What You Will Find in this Repo**:
+1. [Searching Algorithm](https://github.com/Somanyu/DataStructure/tree/main/Searching)
+
+    * [Binary Search](https://github.com/Somanyu/DataStructure/tree/main/Searching/Binary_Search)
+    * [Linear Search](https://github.com/Somanyu/DataStructure/tree/main/Searching/Linear_Search)
+
+2. [Stack](https://github.com/Somanyu/DataStructure/tree/main/Stack)
+
+    * [Application of Stack](https://github.com/Somanyu/DataStructure/tree/main/Stack/ApplicationOfStack)
+
+3. [Sorting Algorithm](https://github.com/Somanyu/DataStructure/tree/main/Sorting)
+
+    * [Bubble Sort](https://github.com/Somanyu/DataStructure/tree/main/Sorting/Bubble%20Sort)
