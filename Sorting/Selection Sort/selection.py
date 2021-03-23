@@ -1,11 +1,9 @@
-a = [10, 50, 30, 60, 5]
+a = [1, 6.1, 3, 4, 5, 6.4, 7, 8, 9, 10]
 
 for i in range(len(a)):
-    min_idx = i
     for j in range(i+1, len(a)):
-        if a[min_idx] > a[j]:
-            min_idx = j
-    a[i], a[min_idx] = a[min_idx], a[i]
+        if a[i] > a[j]:
+            a[i], a[j] = a[j], a[i]
 
 print("sorted array")
 for i in range(len(a)):
