@@ -50,6 +50,6 @@ queue = []
         return queue[top]
     ```
 ## Types of Queue:
-* Simple Queue
+* ![Simple Queue](https://github.com/Somanyu/DataStructure/tree/main/Queue)
 * Circular Queue 
 * Priority Queue
