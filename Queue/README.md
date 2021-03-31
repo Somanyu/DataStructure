@@ -5,3 +5,5 @@
 A perfect real life example for Queue is when you are standing in queue for bus tickets/train tickets. The first person to enter the queue is the first person to leave the queue after receiving the ticket. 
 
 ![alt text](https://www.codesdope.com/staticroot/images/ds/queue1.png "Queue Data Structure")
+
+<img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/06/C-Queue-insertion-and-deletion.jpg" alt="Queue" width="500" height="500">
