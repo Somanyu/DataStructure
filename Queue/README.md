@@ -49,4 +49,7 @@ queue = []
     if queue is full
         return queue[top]
     ```
-        
+## Types of Queue:
+* Simple Queue
+* Circular Queue 
+* Priority Queue
