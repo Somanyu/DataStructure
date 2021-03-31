@@ -1,57 +1,69 @@
-#include <stdio.h>
-#define MAX 50
-
-void enqueue(int);
-void dequeue();
-void display();
+#include<stdio.h>
+#define MAX 10
 
 int queue[MAX];
 int front = -1;
 int rear = -1;
 
-int main() {
-    enqueue(18);
-    enqueue(42);
-    enqueue(53);
-    enqueue(20);
-    enqueue(90);
-    enqueue(9);
-    enqueue(34);
-
-    dequeue();
-
-    display();
-
-    return 0;
-}
-
-void enqueue(int value) {
-    if(rear == MAX-1)
-        printf("\nQueue Overflow\n");
-    else {
-        if(front == -1)
-            front=0;
-            rear = rear+1;
-            queue[rear] = value;
+void enqueue(int item) {
+    
+    if((front == 0 && rear == MAX-1) || (front == rear+1)) {
+        printf("Queue Overflow");
     }
+
+    if(front == -1) {
+        front = 0;
+        rear = 0;
+    }
+
+    else {
+        if(rear == MAX-1)
+            rear = 0; 
+        else
+            rear = rear+1;
+    }
+    queue[rear] = item;
+
 }
 
 void dequeue() {
-    if(front == -1 || front > rear)
-        printf("\nQueue Underflow\n");
+    if(front == -1) {
+        printf("\nQueue Underflow");
+    }
+
+    if(front == rear) {
+        front = -1;
+        rear = -1;
+    }
     else {
-        front = front+1;
+        if(front == MAX-1)
+            front = 0;
+        else
+            front = front+1;
     }
 }
 
 void display() {
-    if(front==-1)
-        printf("Queue is Empty");
-    else {
-        for(int i = front; i <= rear; i++) {
-            printf(" %d ", queue[i]);
-        }
+    int frontpos = front, rearpos = rear;
+    if(front == -1) {
+        printf("\nQueue is empty");
     }
+    if(frontpos <= rearpos)
+        while(frontpos <= rearpos) {
+            printf("%d ", queue[frontpos]);
+            frontpos++;
+        }
 }
 
+int main() {
+    enqueue(78);
+    enqueue(8);
+    enqueue(89);
+    enqueue(19);
+    enqueue(23);
+    enqueue(3);
 
+    dequeue();
+
+    display();
+}
