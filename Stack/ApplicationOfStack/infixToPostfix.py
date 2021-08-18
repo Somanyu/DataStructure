@@ -31,35 +31,35 @@ class Postfix:
         return element.isalpha()
     
         """Method to Convert"""
-        def convertor(self, expr):
+    def converter(self, expr):
             
-            for i in expr:
+        for i in expr:
 
-                # checks if it is operand
-                if self.isOperand(i):
-                    self.output += i
+            # checks if it is operand
+            if self.isOperand(i):
+                self.output += i
                 
-                # checks if it is open bracket '('
-                elif i == "(":
-                    self.push(i)
+            # checks if it is open bracket '('
+            elif i == "(":
+                self.push(i)
                 
-                # checks if it is close bracket ')'
-                elif i == ")":
-                    while not self.isEmpty() and self.peek() != "(":
-                        self.output += self.pop()
-                    self.pop()
+            # checks if it is close bracket ')'
+            elif i == ")":
+                while not self.isEmpty() and self.peek() != "(":
+                    self.output += self.pop()
+                self.pop()
                 
-                # checks if it is an operator
-                else:
-                    while not self.isEmpty() and self.peek() != "(" and self.precedence[self.peek()] >= self.precedence[i]:
-                        self.output += self.pop()
-                    self.push(i)
+            # checks if it is an operator
+            else:
+                while not self.isEmpty() and self.peek() != "(" and self.precedence[self.peek()] >= self.precedence[i]:
+                    self.output += self.pop()
+                self.push(i)
 
-            # pops the left over element
-            while self.stack:
-                self.output += self.pop()
+        # pops the left over element
+        while self.stack:
+            self.output += self.pop()
                 
-            return self.output  
+        return self.output  
             
 expression = "(a-b/c)*(a/k-l)"
 print("INFIX expression :: ", expression)
