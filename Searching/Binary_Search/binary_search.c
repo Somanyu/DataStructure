@@ -22,7 +22,7 @@ int binary_search(int arr[], int left, int right, int num) {
 }
 
 int main() {
-    int arr[] = { 23, 55, 18, 90, 61 };
+    int arr[] = { 20, 38, 56, 77, 80, 90 };
     int m = sizeof(arr) / sizeof(arr[0]);
     int number = 55;
 
