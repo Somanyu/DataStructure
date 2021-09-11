@@ -1,4 +1,4 @@
-
+package Stack;
 // Stack implementation in Java
 class Stack {
 

@@ -1,3 +1,5 @@
+package Searching.Binary_Search;
+
 class BinarySearch {
 
     // Function for searching

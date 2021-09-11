@@ -1,4 +1,4 @@
-package ApplicationOfStack;
+package Stack.ApplicationOfStack;
 
 import java.util.*;
 

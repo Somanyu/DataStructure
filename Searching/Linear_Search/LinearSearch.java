@@ -1,3 +1,5 @@
+package Searching.Linear_Search;
+
 class LinearSearch {
 
     // Function for Searching
