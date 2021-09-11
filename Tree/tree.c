@@ -20,15 +20,6 @@ struct node *nodeCreate(int value)
   return nodeNew;
 }
 
-struct node* insertLeft(struct node* root, int value) {
-  root->left = nodeCreate(value);
-  return root->left;
-}
-
-struct node* insertRight(struct node* root, int value) {
-  root->right = nodeCreate(value);
-  return root->right;
-}
 
 void main()
 {
