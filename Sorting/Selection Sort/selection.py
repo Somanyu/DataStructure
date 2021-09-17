@@ -1,22 +1,29 @@
-""" Selection Sort using python """
+# function to perform the selection sort
+def selectionSort(array):
+   
+   # outer loop for passes
+    for i in range(len(array)):
 
-# array to be sorted
-a = [10, 50, 60, 20, 5]
+        # set the first element as the minimum
+        minimum = i
 
-# outer loop for moving 
-# to unsorted subarray
-for i in range(len(a)):
+        # inner loop for comparsion with next element
+        for j in range(i + 1, len(array)):
+         
+            # compare the minimum element to the next element 
+            if array[minimum] > array[j]:
 
-    # inner loop for 
-    # comparsion between two adjacent values
-    for j in range(i+1, len(a)):
+                # if TRUE set the minimum element to the array[j]
+                minimum = j
+         
+        # swapping is done with minimum element to the current element
+        (array[i], array[minimum]) = (array[minimum], array[i])
 
-        # if index of i is greater than index of j
-        # swapping takes place
-        if a[i] > a[j]:
-            a[i], a[j] = a[j], a[i]
 
-print("Sorted Array ->", end=' ')
-for i in range(len(a)):
-    print(a[i], end=' ')
+arr = [2, 44, 38, 5, 47, 15, 36, 26, 27, 3, 46, 4, 19]
+selectionSort(arr)
+
+print('Sorted Array --->', end=" ")
+for item in range(len(arr)):
+    print(arr[item], end=" ")
  
