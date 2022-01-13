@@ -1,6 +1,12 @@
 /* Selection Sort using C */
 #include <stdio.h>
 
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 int main() {
 
     // array to be sorted
@@ -18,9 +24,10 @@ int main() {
             // if index of i is greater than index of j
             // swapping takes place
             if(arr[i] > arr[j]) {
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+                swap(&arr[i], &arr[j]);
+                // int temp = arr[i];
+                // arr[i] = arr[j];
+                // arr[j] = temp;
             }
         }
     }
