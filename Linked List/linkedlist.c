@@ -4,8 +4,8 @@
 struct node
 {
     int data;
-    struct node *next;
-};
+    struct node *link;
+} * head;
 
 struct node *nodeCreate(int value)
 {
@@ -13,43 +13,64 @@ struct node *nodeCreate(int value)
     nodeNew = (struct node *)malloc(sizeof(struct node));
 
     nodeNew->data = value;
-    nodeNew->next = NULL;
+    nodeNew->link = NULL;
 
     return nodeNew;
 };
 
-void printList(struct node *n)
+void insertNodeAtBeginning(int value)
 {
-    while (n != NULL) {
-        printf("%d->", n->data);
-        n = n->next;
+    struct node *newNode;
+    newNode = (struct node *)malloc(sizeof(struct node));
+
+    if (newNode == NULL)
+        printf("Can't allocate memory");
+    else
+    {
+        newNode->data = value;
+        newNode->link = head;
+
+        head = newNode;
     }
 }
 
+void printNode(struct node *n)
+{
+    int count = 0;
+    if (n == NULL)
+        printf("Linked list is empty");
+    while (n != NULL)
+    {
+        printf("%d->", n->data);
+        n = n->link;
+        count++;
+    }
+    printf("\nNumber of nodes = %d", count);
+}
 
 void main()
 {
-    struct node *first;
-    struct node *second;
-    struct node *third;
+    //* Initialize nodes
+    struct node *one;
+    struct node *two;
+    struct node *three;
 
-    first = nodeCreate(23);
-    second = nodeCreate(78);
-    third = nodeCreate(11);
+    //* Allocate memory & Assign Values
+    one = nodeCreate(45);
+    two = nodeCreate(98);
+    three = nodeCreate(3);
 
-    first->next = second;
-    second->next = third;
+    //* Connect nodes;
+    one->link = two;
+    two->link = three;
+    three->link = NULL;
 
-    /*
-    * +--------------+          +--------- -------+         +----------------+
-    * |  23  | First | ----->   |  78  |  Second  | ----->  |  11  |  Third  |
-    * +--------------+          +---------- ------+         +----------------+
-    * 
-    */
-   printList(first);
-   
+    head = one;
+
+    //* Insert nodes at beginning
+    insertNodeAtBeginning(49);
+    insertNodeAtBeginning(198);
+
+
+    printNode(head);
 }
-
-
-
-
