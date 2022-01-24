@@ -82,10 +82,60 @@ void insertNodeAtMiddle(int value, int position)
                 break;
         }
 
-        if(temp != NULL) {
+        if (temp != NULL)
+        {
             newNode->link = temp->link;
             temp->link = newNode;
         }
+    }
+}
+
+void deleteFirstNode()
+{
+    struct node *deleteFirst;
+
+    if (head == NULL)
+        printf("Linked List is empty");
+
+    else
+    {
+        deleteFirst = head;
+        head = head->link;
+
+        printf("\nData Deleted = %d\n", deleteFirst->data);
+
+        free(deleteFirst);
+    }
+}
+
+void deleteLastNode()
+{
+    struct node *toDelete, *secondLastNode;
+
+    if (head == NULL)
+        printf("Linked List is empty");
+
+    else
+    {
+        toDelete = head;
+        secondLastNode = head;
+
+        while (toDelete->link != NULL)
+        {
+            secondLastNode = toDelete;
+            toDelete = toDelete->link;
+        }
+
+        if (toDelete == head)
+        {
+            head = NULL;
+        }
+        else
+        {
+            secondLastNode->link = NULL;
+        }
+
+        free(toDelete);
     }
 }
 
@@ -132,6 +182,9 @@ void main()
 
     //* Insert nodes at middle
     insertNodeAtMiddle(100, 2);
+
+    //* Delete nodes at first
+    deleteFirstNode();
 
     printNode(head);
 }
