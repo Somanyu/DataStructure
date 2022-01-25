@@ -133,9 +133,45 @@ void deleteLastNode()
         else
         {
             secondLastNode->link = NULL;
+            printf("\nData Deleted = %d\n", toDelete->data);
         }
 
         free(toDelete);
+    }
+}
+
+void deleteMiddleNode(int position)
+{
+    struct node *toDelete, *prevNode;
+
+    if (head == NULL)
+        printf("Linked List is empty");
+
+    else
+    {
+        toDelete = head;
+        prevNode = head;
+
+        for (int i = 2; i <= position; i++)
+        {
+            prevNode = toDelete;
+            toDelete = toDelete->link;
+
+            if (toDelete == NULL)
+                break;
+        }
+
+        if (toDelete != NULL)
+        {
+            if (toDelete == head)
+                head = head->link;
+
+            prevNode->link = toDelete->link;
+            toDelete->link = NULL;
+            printf("\nData Deleted = %d\n", toDelete->data);
+
+            free(toDelete);
+        }
     }
 }
 
@@ -144,6 +180,7 @@ void printNode(struct node *n)
     int count = 0;
     if (n == NULL)
         printf("Linked list is empty");
+    printf("\n");
     while (n != NULL)
     {
         printf("%d->", n->data);
@@ -185,6 +222,12 @@ void main()
 
     //* Delete nodes at first
     deleteFirstNode();
+
+    //* Delete nodes at last
+    deleteLastNode();
+
+    //* Delete nodes at middle
+    deleteMiddleNode(2);
 
     printNode(head);
 }
