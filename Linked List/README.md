@@ -49,3 +49,13 @@ When all the nodes ar connected to each other *i.e* First node is linked to last
 
 ## **NOTE**: Inserting a node at the end linked list will be **O(1)**, if there is a tail pointer that points to the last node of the linked list.
 
+<br>
+
+## Advantages of Singly Linked List:
+- Easier to insert and remove elements compared to array.
+- Efficient data structure when traversing in one direction
+- Memory allocation and deallocation can be done easily during execution.
+## Disadvantages of Singly Linked List:
+- Takes up more memory than array.
+- We can't traverse in reverse order.
+- Can not access elements randomly, only sequntially.
