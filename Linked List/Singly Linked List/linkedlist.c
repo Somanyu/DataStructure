@@ -48,7 +48,7 @@ void insertNodeAtEnd(int value)
 
         temp = head;
 
-        while (temp != NULL && temp->link != NULL)
+        while (temp->link != NULL)
         {
             temp = temp->link;
         }
@@ -175,6 +175,18 @@ void deleteMiddleNode(int position)
     }
 }
 
+void deleteAll()
+{
+    struct node *temp;
+    while (head != NULL)
+    {
+        temp = head;
+        head = head->link;
+
+        free(temp);
+    }
+}
+
 void printNode(struct node *n)
 {
     int count = 0;
@@ -214,20 +226,20 @@ void main()
     insertNodeAtBeginning(198);
 
     //* Insert nodes at end
-    insertNodeAtEnd(78);
-    insertNodeAtEnd(2);
+    // insertNodeAtEnd(78);
+    // insertNodeAtEnd(2);
 
     //* Insert nodes at middle
-    insertNodeAtMiddle(100, 2);
+    // insertNodeAtMiddle(100, 2);
 
     //* Delete nodes at first
-    deleteFirstNode();
+    // deleteFirstNode();
 
     //* Delete nodes at last
-    deleteLastNode();
+    // deleteLastNode();
 
     //* Delete nodes at middle
-    deleteMiddleNode(2);
+    // deleteMiddleNode(2);
 
     printNode(head);
 }
