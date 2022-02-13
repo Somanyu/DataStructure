@@ -189,17 +189,17 @@ void deleteAll()
 
 void reverseList()
 {
-    struct node *temp2, *temp;
+    struct node *nextNode, *prevNode;
 
     while (head != NULL)
     {
-        temp2 = head->link;
-        head->link = temp;
-        temp = head;
-        head = temp2;
+        nextNode = head->link;
+        head->link = prevNode;
+        prevNode = head;
+        head = nextNode;
     }
 
-    head = temp;
+    head = prevNode;
     
 }
 
