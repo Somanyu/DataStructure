@@ -187,6 +187,22 @@ void deleteAll()
     }
 }
 
+void reverseList()
+{
+    struct node *temp2, *temp;
+
+    while (head != NULL)
+    {
+        temp2 = head->link;
+        head->link = temp;
+        temp = head;
+        head = temp2;
+    }
+
+    head = temp;
+    
+}
+
 void printNode(struct node *n)
 {
     int count = 0;
@@ -210,9 +226,9 @@ void main()
     struct node *three;
 
     //* Allocate memory & Assign Values
-    one = nodeCreate(45);
-    two = nodeCreate(98);
-    three = nodeCreate(3);
+    one = nodeCreate(40);
+    two = nodeCreate(50);
+    three = nodeCreate(60);
 
     //* Connect nodes;
     one->link = two;
@@ -222,24 +238,30 @@ void main()
     head = one;
 
     //* Insert nodes at beginning
-    insertNodeAtBeginning(49);
-    insertNodeAtBeginning(198);
+    insertNodeAtBeginning(30);
+    insertNodeAtBeginning(20);
+    insertNodeAtBeginning(10);
 
     //* Insert nodes at end
-    // insertNodeAtEnd(78);
-    // insertNodeAtEnd(2);
+    insertNodeAtEnd(70);
+    insertNodeAtEnd(80);
 
     //* Insert nodes at middle
-    // insertNodeAtMiddle(100, 2);
+    insertNodeAtMiddle(100, 2);
 
     //* Delete nodes at first
-    // deleteFirstNode();
+    deleteFirstNode();
 
     //* Delete nodes at last
-    // deleteLastNode();
+    deleteLastNode();
 
     //* Delete nodes at middle
-    // deleteMiddleNode(2);
+    deleteMiddleNode(2);
 
+    printNode(head);
+
+    //* Reverse list
+    reverseList();
+    printf("\n\nReversed Linked List = ");
     printNode(head);
 }
