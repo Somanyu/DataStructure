@@ -43,14 +43,9 @@ When all the nodes ar connected to each other *i.e* First node is linked to last
 | Insert at End | O(n) |
 | Return Last node | O(n) |
 | Delete at End | O(n) |
-| Find node by key | Text |
-| Remove key from list| Text |
-| Insert at Middle | Text |
-| Delete at Middle | Text |
+| Find node by key | O(n) |
+| Delete at Middle | O(n) |
+| Insert at Middle | O(n) |
 
-## **NOTE**: Any operation with the last node of the linked list will be different, if there is a tail pointer that points to the last node of the linked list
+## **NOTE**: Inserting a node at the end linked list will be **O(1)**, if there is a tail pointer that points to the last node of the linked list.
 
-| Operation | Time Complexity |
-| ------------ | --------------|
-| Insert at End | O(1) |
-| Delete at End | O(n) |
