@@ -39,6 +39,30 @@ void insertNodeAtBeginning(int value)
     }
 }
 
+void insertNodeAtEnd(int value)
+{
+    struct node *newNode;
+
+    if (newNode == NULL)
+        printf("Can't allocate memory");
+    else
+    {
+        newNode = (struct node *)malloc(sizeof(struct node));
+        tail = head;
+
+        while (tail->next != NULL)
+            tail = tail->next;
+        
+        newNode->data = value;
+        newNode->next = NULL;
+        newNode->previous = tail;
+            
+        tail->next = newNode;
+        tail = newNode;
+        
+    }
+}
+
 void printNode(struct node *n)
 {
     int count = 0;
@@ -102,6 +126,9 @@ void main()
 
     //* Insert node at beginning
     insertNodeAtBeginning(78);
+
+    //* Insert node at end
+    insertNodeAtEnd(64);
 
     printNode(head);
     reversePrintNode(head);
