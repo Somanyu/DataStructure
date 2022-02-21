@@ -48,18 +48,50 @@ void insertNodeAtEnd(int value)
     else
     {
         newNode = (struct node *)malloc(sizeof(struct node));
-        tail = head;
+        // tail = head;
 
-        while (tail->next != NULL)
-            tail = tail->next;
-        
+        // while (tail->next != NULL)
+        //     tail = tail->next;
+
         newNode->data = value;
         newNode->next = NULL;
         newNode->previous = tail;
-            
+
         tail->next = newNode;
         tail = newNode;
-        
+    }
+}
+
+void insertNodeAtMiddle(int value, int position)
+{
+    struct node *newNode, *temp;
+    newNode = (struct node *)malloc(sizeof(struct node));
+
+    if (newNode == NULL)
+        printf("Can't allocate memory");
+
+    else
+    {
+        newNode->data = value;
+        newNode->next = NULL;
+        newNode->previous = NULL;
+
+        temp = head;
+
+        for (int i = 0; i < position - 1; i++)
+        {
+            temp = temp->next;
+
+            if (temp == NULL)
+                break;
+        }
+
+        if (temp != NULL)
+        {
+            newNode->next = temp->next;
+            newNode->previous = temp;
+            temp->next = newNode;
+        }
     }
 }
 
@@ -83,11 +115,10 @@ void reversePrintNode()
     if (head == NULL)
         printf("Linked List is empty");
 
-    tail = head;
-    while (tail->next != NULL)
-    {
-        tail = tail->next;
-    }
+    // tail = head;
+    // while (tail->next != NULL)
+    //     tail = tail->next;
+
     printf("\n");
     printf("\nPrint from last: ");
     while (tail != NULL)
@@ -124,11 +155,21 @@ void main()
 
     head = one;
 
+    tail = head;
+    while (tail->next != NULL)
+    tail = tail->next;
+    
+
     //* Insert node at beginning
     insertNodeAtBeginning(78);
+    insertNodeAtBeginning(147);
 
     //* Insert node at end
     insertNodeAtEnd(64);
+    insertNodeAtEnd(784);
+
+    //* Insert node at middle
+    insertNodeAtMiddle(49, 3);
 
     printNode(head);
     reversePrintNode(head);
