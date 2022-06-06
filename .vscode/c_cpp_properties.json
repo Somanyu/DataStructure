@@ -2,16 +2,17 @@
     "configurations": [
         {
             "name": "Win32",
-            "compilerPath": "C:/MinGW/bin/gcc.exe",
+            "compilerPath": "C:/MinGW/bin/g++",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "C:/MinGW/lib/gcc/mingw32/9.2.0/include/c++/mingw32"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "cStandard": "c17",
+            "cStandard": "gnu17",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-gcc-x64"
         }
