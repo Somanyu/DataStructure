@@ -1,4 +1,5 @@
 *.exe
 yeast.c
+yeast.cc
 yeast.py
 .vscode
