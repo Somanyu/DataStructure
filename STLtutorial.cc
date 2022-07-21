@@ -31,6 +31,31 @@ array<int, 3> arr; // {0, 0, 0}
 // int arrma[10000000]; // max size of array 10^7 (int, double, char)
 // bool arrmax[100000000]; // max size of bool datatype array 10^8 (bool)
 
+bool comp(int el1, int el2)
+{
+    if (el1 <= el2)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool comp1(pair<int, int> el1, pair<int, int> el2)
+{
+    if (el1.first < el2.first)
+    {
+        return true;
+    }
+    if (el1.first == el2.second)
+    {
+        if (el1.second > el2.first)
+        {
+            return true;
+        }
+        return false;
+    }
+}
+
 int main()
 {
     // int arrma[1000000];  // max size of array 10^6 (int, double, char)
@@ -467,6 +492,214 @@ int main()
     {
         cout << it << " ";
     }
+
+    // Day 3
+
+    // Bitset
+    // int -> 16 bits
+    // char -> 8 bits
+    // bitset -> 1 bit
+
+    bitset<5> bt; // segmentation tree problems
+    // only stores 1 or 0
+    cin >> bt; // 10101
+    // all, any, count, flip, none, set, reset, size, test
+
+    cout << bt.all();   // return true or false -> all the bits are set(1) true else false
+    cout << bt.any();   // if any one bit is set(1) returns true
+    cout << bt.count(); // print number of set(1) bits
+    bt.flip(2);         // it will flip the bit at index 2
+    cout << bt.none();  // if none is set(1) returns true else false
+    bt.set();           // entire set will become 1 1011 -> 1111
+    bt.set(2);          // sets the index number of 2
+    bt.set(2, 0);       // sets 2nd index with 0
+    bt.reset();         // resets whole set to 0. same as bt.set() not bt.reset(2, 0)
+    cout << bt.size();  // prints size of bit set
+    cout << bt.test(2); // find particular index is set(1) or not
+
+    // Sorting Algorithms
+    // store in linear fashion -> array, vector
+    int n = 5;
+    int arrrr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cout << "enter a number";
+        cin >> arrrr[i];
+    }
+    sort(arrrr, arrrr + n); // in increasing order -> n log(n)
+
+    vector<int> vecna(5, 0);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> vecna[i];
+    }
+
+    sort(vecna.begin(), vecna.end()); // u can write also merge sort
+
+    // to reverse a array
+    reverse(arrrr, arrrr + n); // reverse(startIterator, endIterator)
+    reverse(vecna.begin(), vecna.begin() + 4);
+
+    // to find the maximum elements in any index range
+    int el = *max_element(arrrr, arrrr + n);
+    int el = *max_element(vecna.begin(), vecna.end());
+    // for minimum elements
+    int ell = *min_element(arrrr, arrrr + n);
+    int ell = *min_element(vecna.begin(), vecna.end());
+
+    // find the sum of an range in that array
+    // accumulate(startiterator, endIterator, initialSum);
+    int sums = accumulate(arrrr, arrrr + n, 0);
+    int sums = accumulate(vecna.begin(), vecna.end(), 0);
+
+    // arr[] = [1, 6, 7, 1, 2, 1, 3]
+    // x=1
+    // how many times x occurs in the array
+    // count(firstIterator, secondIterator, x)
+    int cnt = count(arrrr, arrrr + n, 1);
+    int cnt = count(vecna.begin(), vecna.end(), 1);
+
+    // arr[] = {1, 2, 5, 1, 2, 4, 4}
+    // find the first occurrence of 2
+    auto ti = find(arrrr, arrrr, 2); // return an iterator
+    // pointing to the first instance of ti, or else ti returns pointing to the end() if it is not there
+
+    vector<int> vqwe(5, 0); // [2, 3, 7, 8, 1]
+    // int p = 4;
+    auto it = find(vqwe.begin(), vqwe.end(), 4);
+    // it will point to the pointer after last element because it is not present
+
+    // binary search
+    // this stl only works on sorted arrays
+    // arr[] = [1, 5, 7, 9, 10]
+    // x = 9
+    // true -> 9 exists
+    // x = 9
+    // false -> 8 does not exists
+
+    // binary_search(firstIterator, lastIterator, x)
+    // returns a true or false
+    // works in log n complexity
+    bool res = binary_search(arrrr, arrrr + n, 8);
+    bool res = binary_search(vecna.begin(), vecna.end(), 8);
+
+    // lower_bound function
+    // returns an iterator pointing to the
+    // first element which is not less than x
+    // arr[] = {1, 5, 7, 7, 8, 10, 10, 10, 11, 11, 12}
+    // x = 10 -> point to 10
+    // x = 6 -> point to 7
+    // x = 13 -> point to end of array
+    // this works in log N, works in sorted arrays
+    int x = 13;
+    auto it = lower_bound(arrrr, arrrr + n, x);
+    // ind = it - arrrr; -> return index
+
+    auto itv = lower_bound(vecna.begin(), vecna.end(), x);
+    // index can also be find by below method
+    // auto itv = lower_bound(vecna.begin(), vecna.end(), x) - vecna.begin();
+    // ind = itv - vec.begin(); -> returns index
+
+    // upper bound
+    // this returns an iterator which points to an element which is
+    // just gretaer than x
+    // arr[] = {1, 5, 7, 7, 8, 10, 10, 10, 11, 11, 12}
+    // x = 7 -> points to 8
+    // x = 6 -> points to 7
+    // x = 12 -> points to end() of array
+    // x = 15 -> points to end() of array
+    int x = 13;
+    auto it = upper_bound(arrrr, arrrr + n, x);
+    // ind = it - arrrr; -> return index
+
+    auto itv = upper_bound(vecna.begin(), vecna.end(), x);
+    // index can also be find by below method
+    // auto itv = upper_bound(vecna.begin(), vecna.end(), x) - vecna.begin();
+    // ind = itv - vec.begin(); -> returns index
+
+    // Q1. find the first index where the element X lies
+    // There are many ways to solve it
+
+    // 1st way
+    if (binary_search(arrrr, arrrr + n, x) == true)
+    {
+        cout << lower_bound(arrrr, arrrr + n, x) - arrrr;
+    }
+    else
+        cout << "does not exists!";
+
+    // 2nd way
+    int ind = lower_bound(arrrr, arrrr + n, x) - arrrr;
+    if (ind != n && arr[ind] == x)
+    {
+        cout << " Found at: " << ind;
+    }
+    else
+    {
+        cout << "Not found!";
+    }
+
+    // Q2. Find me last occurences of x in an array
+    // ar[] = [1, 5, 7, 7, 8, 10, 10, 10, 11, 11, 12]
+    ///////////0  1  2  3  4  5   6   7   8   9   10
+
+    // last occurence of x = 10, ans = 7th index
+    int indi = upper_bound(arrrr, arrrr + n, x) - arrrr;
+    ind -= 1;
+    if (arrrr[ind] == x)
+    {
+        cout << "last occurence: " << ind;
+    }
+    else
+    {
+        cout << "Does not exists";
+    }
+
+    // Q3. Tell me the number of  times the x appears in arrary
+    // ar[] = [1, 5, 7, 7, 8, 10, 10, 10, 11, 11, 12]
+    ///////////0  1  2  3  4  5   6   7   8   9   10
+    // x = 10, appears 3 times
+    // x = 7, appears 2 times
+
+    // Next permutation
+    // string s = "abc"
+    // all permutations are as follows:
+    // -> abc
+    // -> acb
+    // -> bac
+    // -> bca
+    // -> cab
+    // -> cba
+    // time complexity O(n)
+
+    string s = "bca";
+    bool res = next_permutation(s.begin(), s.end()); // returns true, and string s stores next permutaion -> "cab"
+
+    string s = "cba";
+    bool res = next_permutation(s.begin(), s.end()); // returns false, and string s stores -> "cba"
+
+    // given any random string s = "bca"
+    // print all the permutations
+    string s = "bca";
+    sort(s.begin(), s.end());
+    do
+    {
+        cout << s << endl;
+    } while (next_permutation(s.begin(), s.end()));
+
+    // Follow recuresive way in interview, STL in CP.
+
+    // previous permutation
+    bool res = prev_permutation(s.begin(), s.end());
+
+    // Comparator
+    sort(arrrr, arrrr+n); // sorts everything in ascending order
+
+    //descending
+    sort(arrrr, arrrr+n, comp);
+    // greater<int> is an inbuilt comparator
+    // which works only if we want to sort in descending
+    // sort(arrrr, arrrr+n, greater<int>);
 }
 
 // [
@@ -498,5 +731,19 @@ int main()
 //         priority queue: 1:19:44
 //         dequeue: 1:33:52
 //         list: 1:37:13
+//     ]
+// ]
+
+// [
+//     Video Link 03: https://www.youtube.com/watch?v=AUPLWa6gbIQ
+//     Timestamps: [
+//         bitset: 6:07
+//         sorting algorithm: 22:40
+//         binary search: 58:22
+//         lower bound: 1:02:20
+//         upper bound: 1:09:55
+//         next permutation: 1:36:15
+//         previous permutation: 1:52:40
+//         comparator: 1:55:41
 //     ]
 // ]
